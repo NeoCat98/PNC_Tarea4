@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Agregar Producto</title>
+</head>
+<body>
+	<form method="post" th:action="@{/validar}" th:object="${producto}">
+	<div>
+		<label>C&oacute;digo: </label>
+		<input type="text" th:field="*{codigo}">
+		<span th:errors="*{codigo}" style="color: #FF0000"></span>
+	</div><br>
+	<div>
+		<label>Nombre: </label>
+		<input type="text" th:field="*{nombre}">
+		<span th:errors="*{nombre}" style="color: #FF0000"></span>
+	</div><br>
+	<div>
+		<label>Marca: </label>
+		<input type="text" th:field="*{marca}">
+		<span th:errors="*{marca}" style="color: #FF0000"></span>
+	</div><br>
+	<div>
+		<label>Descripci&oacute;n: </label>
+		<input type="text" th:field="*{descripcion}">
+		<span th:errors="*{descripcion}" style="color: #FF0000"></span>
+	</div><br>
+	<div>
+		<label>Existencias: </label>
+		<input type="text" th:field="*{existencias}">
+		<span th:errors="*{existencias}" style="color: #FF0000"></span>
+	</div><br>
+	<div>
+		<label>Fecha de ingreso: </label>
+		<input type="text" th:field="*{fecha}" placeholder="dd/mm/yyyy">
+		<span th:errors="*{fecha}" style="color: #FF0000"></span>
+	</div><br>
+	<input type="submit" value="Agregar producto">
+	</form>
+</body>
+</html>
